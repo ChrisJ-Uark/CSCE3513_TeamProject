@@ -20,13 +20,10 @@ Some of the changes to this iteration are:
   
 **For Grader:** We asked the professor about player entry and he said first/last name is not necessary, but a user input ID is. We removed the first/last name entry for this reason in our program, but kept these fields in the database to avoid causing unnecessary bugs by deleting/recreating the table and adjusting our Database wrapper class. Every entry in the DB corresponding to first/last name will now show "(blank)" instead to show that they are intentionally left blank.
 
-**MAJOR BUGS ARE TO BE EXPECTED**
-
 Be sure to check the Dependency Installation
 
 ## Basics
 * Intended only for use in Team 8 of UArk CSCE 3513, Fall 2022
-* Program is incomplete. Major bugs are to be expected
 * Program has currently only been tested on Windows 10 and Ubuntu (Linux Cinnamon Mint) so far
 * Program requires latest pynput, psycopg2-binary, tkinter, and sqlite3 modules to be installed
 * Program is NOT intended to work on Mac OS
