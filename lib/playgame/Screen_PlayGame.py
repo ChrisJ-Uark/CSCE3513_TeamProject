@@ -141,10 +141,15 @@ class Screen_PlayGame(AppObject):
             lastTransmission = self.network.getLastTransmission()
             listID = lastTransmission.split(":")
             self.updateHitEvent(int(listID[0]), int(listID[1]))
+            return True
+        return False
         
     def updateScreen(self):
         if self.frameGameboard.frameGameTimer.isTimerActive() and not self.frameGameboard.frameGameTimer.isTimerPaused():
-            self.updateHitEventByLastTrans()
+            if self.updateHitEventByLastTrans():
+                strPlayerHit = self.network.getPlayerHit()
+                if strPlayerHit != None:
+                    self.network.broadcastUDP(strPlayerHit)
             self.frameGameboard.frameGameTimer.updateTimer()
             if abs(time.time() - self.floatHighScoreFlashLastTime) >= 0.25:
                 self.flashTeamScore()
