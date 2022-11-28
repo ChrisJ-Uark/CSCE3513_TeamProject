@@ -195,12 +195,8 @@ class Screen_PlayGame(AppObject):
         
     def setPlayersUsingList(self, listPlayers, listIDs):
         listIntID = self.getGeneratedIDList()
-        print(listPlayers)
-        print(listIntID)
-        print(listIDs)
         self.frameGameboard.setPlayersUsingList(listPlayers, listIDs)
         self.listOfListIntPlayerIDs = self.frameGameboard.getValidListIntID()
-        print(self.listOfListIntPlayerIDs)
         self.trafficGenerator.setIDList(self.listOfListIntPlayerIDs[0], 
                                         self.listOfListIntPlayerIDs[1])
         

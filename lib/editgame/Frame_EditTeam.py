@@ -83,8 +83,7 @@ class Frame_EditTeam(AppObject):
         for i in range(self.intPlayerEntries):
             strRawPlayerID = self.labelID[i]["text"]
             if strRawPlayerID != "":
-                strPlayerID = strRawPlayerID.split(" ")[1]
-                if int(strPlayerID) == intID:
+                if int(strRawPlayerID) == intID:
                     return True
         return False
         
@@ -93,9 +92,6 @@ class Frame_EditTeam(AppObject):
             return ""
         else:
             strRawPlayerID = self.labelID[self.intArrowPos]["text"]
-            if strRawPlayerID != "":
-                strPlayerID = strRawPlayerID.split()[1]
-                return strPlayerID
             return strRawPlayerID
         
     def getPlayerAtArrow(self):
@@ -111,8 +107,8 @@ class Frame_EditTeam(AppObject):
         listPlayerIDs = [None] * self.intPlayerEntries
         for i in range(self.intPlayerEntries):
             listPlayerIDs[i] = self.labelID[i]["text"]
-            if self.labelID[i]["text"] != "":
-                listPlayerIDs[i] = int(self.labelID[i]["text"].split()[1])
+            if listPlayerIDs[i] != "":
+                listPlayerIDs[i] = int(listPlayerIDs[i])
         return listPlayerIDs
             
     def getPlayerList(self):
@@ -130,7 +126,7 @@ class Frame_EditTeam(AppObject):
         return intCount
         
     def addPlayer(self, intArrowPos, intID, strPlayer, strCode):
-        self.labelID[intArrowPos]["text"] = "ID: " + str(intID)
+        self.labelID[intArrowPos]["text"] = str(intID)
         self.labelPlayerName[intArrowPos]["text"] = strPlayer
         self.labelCodeName[intArrowPos]["text"] = strCode
         self.checkboxVar[intArrowPos].set(True)

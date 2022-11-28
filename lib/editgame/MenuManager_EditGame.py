@@ -249,7 +249,6 @@ class MenuManager_EditGame(AppObject):
         
     def submit_PlayerID(self):
         strID = self.menuAddPlayerID.getInputEntryText()
-        print("strID: " + strID)
         try:
             intID = 0
             if strID.isdigit():
@@ -274,7 +273,6 @@ class MenuManager_EditGame(AppObject):
                     self.menuAddCodename.openSelf()
                 else:
                     player = playerRow[0] # First occurrence, if somehow multiple entries
-                    print("submitPlayerID: " + str(player))
                     self.intMenu = self.ASKUSEPREVCODE
                     self.menuUsePrevCodename.setCodename(player[self.INDEX_PINFO_CODE])
                     self.menuUsePrevCodename.openSelf()
