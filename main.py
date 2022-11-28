@@ -118,6 +118,9 @@ class App(tk.Frame):
     def changeToEdit(self):
         self.screen_PlayGame.closeAllMenus()
         self.screen_PlayGame.resetGameTimer()
+        self.screen_PlayGame.endTrafficGenerator()
+        self.screen_PlayGame.clearGameAction()
+        self.screen_PlayGame.resetScoreboard()
         self.changeScreens(AppState.S_EDITGAME)
             
     def unloadCurrentScreen(self):
@@ -165,7 +168,8 @@ class App(tk.Frame):
     def loadScreen_PlayGame(self):
         self.screen = self.screen_PlayGame
         listPlayers = self.screen_EditGame.getPlayerList()
-        self.screen.setPlayersUsingList(listPlayers)
+        listPlayerIDs = self.screen_EditGame.getPlayerIDList()
+        self.screen.setPlayersUsingList(listPlayers, listPlayerIDs)
         self.screen.showSelf()
         
     def unloadScreen_PlayGame(self):
