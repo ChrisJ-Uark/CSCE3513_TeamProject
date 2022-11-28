@@ -166,14 +166,14 @@ class Screen_PlayGame(AppObject):
         charToColor = 'r'
         if intIDTo in self.listOfListIntPlayerIDs[1]:
             charToColor = 'g'
-        if charFromColor == charToColor:
-            print("Both IDs from same color! Ignoring...")
-        elif self.isValidID(charFromColor, intIDFrom) == False or self.isValidID(charToColor, intIDTo) == False:
+        if self.isValidID(charFromColor, intIDFrom) == False or self.isValidID(charToColor, intIDTo) == False:
             print("updateHitEvent: Error - One or more invalid IDs given!")
             if self.isValidID(charFromColor, intIDFrom) == False:
                 print("\tID: {} is invalid for given team color!".format(intIDFrom))
             if self.isValidID(charToColor, intIDTo) == False:
                 print("\tID: {} is invalid for given team color!".format(intIDTo))
+        elif charFromColor == charToColor:
+            print("Both IDs from same color! Ignoring...")
         else:
             strPlayerFrom = self.frameGameboard.getCodenameFromID(intIDFrom, charFromColor)
             #print("strPlayerFrom: {}".format(strPlayerFrom))
