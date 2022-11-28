@@ -9,7 +9,7 @@ Some of the changes to this iteration are:
   * Modified Scoreboard to accommodate network IDs, as well as add score to a player based on ID, sort the player based on score, and update team score.
   * Added TrafficGenerator.py to dynamically create events and broadcast to localhost port 7501 (press f4 on Play Game screen to start traffic generator).
   * Updated Database for offline support. This is done by using SQLite.
-    * If connection to Heroku fails for whatever reason, the program will attempt to open db\database.db if it exists. If it does not exist, the program will create it. Any updates to the DB will be written to this new offline DB instead. The offline DB does not interact with the online DB in any way other than acting as an alternative for when Heroku.
+    * If connection to Heroku fails for whatever reason, the program will attempt to open db\database.db if it exists. If it does not exist, the program will create it. Any updates to the DB will be written to this new offline DB instead. The offline DB does not interact with the online DB in any way other than acting as an alternative for Heroku.
   * Added flashing team scores.
     * If both team scores are the same, neither team flashes. If one is higher than the higher, the team score will alternate between 2 colors every 0.25 seconds, flashing every 0.5 seconds
   * Edit Game screen now prompts user for ID rather than first/last name
